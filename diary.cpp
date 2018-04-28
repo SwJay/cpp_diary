@@ -51,7 +51,8 @@ void Diary::pdadd(string d){
     getline(cin,line);
     while(line!="."){// read inputs from sdtin
         mynote->Setline(line);
-        getline(cin,line);
+        if(!getline(cin,line))
+            break;
     }
     for(i = 0; i < notes.size(); i++){
         if(d == notes[i]->Getdate()){//update
